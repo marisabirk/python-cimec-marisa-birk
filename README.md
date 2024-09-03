@@ -9,7 +9,7 @@ I also provide data from two computational model features (position, direction) 
 
 ## Overview
 
-- **Data_Analysis.py**: The main pipeline script for the analysis that loads the example data, provides the configuration file and calls other functions.
+- **Data_Analysis.py**: The main pipeline script for the analysis that loads the example data, provides the configuration file and calls other functions and plots the results.
 - **dRSA_coreFunction.py**: The core function of the analysis, capable of comparing any dynamic neural and computational data.
 - **dRSA_subsampling2.py**: A script for creating subsamples to generalize the data.
 
@@ -22,7 +22,8 @@ To use this pipeline, follow these steps:
 
 ## Usage
 
-1. Run `Data_Analysis.py` to start the main analysis.
+1. Ensure that the working directory is in the folder where you placed all your files.
+2. Run `Data_Analysis.py` to start the main analysis.
 
 
 ## Example Data
