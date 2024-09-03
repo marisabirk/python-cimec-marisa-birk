@@ -50,7 +50,7 @@ opt = {
     'distanceMeasureModel': 'euclidean',  # Distance measure for model RDMs
     'distanceMeasureNeural': 'euclidean',  # Distance measure for neural RDMs
     'dRSA': {
-        'corrMethod': 'corr'  # Method for correlation: 'corr' or 'PCR'
+        'corrMethod': 'corr'  # Method for correlation: 'corr'
     },
     'AverageTime': 1,  # Time duration for averaging at the end in seconds
     'spacingSec': 0.1,  # Minimum distance between subsamples in seconds
