@@ -30,6 +30,6 @@ To use this pipeline, follow these steps:
 
 The repository contains:
 - Example neural data from a test subject.
-- Example data from two models used in the dRSA.
+- Example data from two models (position, direction) used in the dRSA.
 
 You can replace this example data with your own data to perform similar analyses.
