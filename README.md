@@ -3,7 +3,7 @@
 This repository provides an exemplary pipeline for dynamic Representation Similarity Analysis (dRSA) of some data. 
 Dynamic RSA presents a new dynamic extension to representational similarity analysis (RSA) which allows investigating when naturalistic dynamic stimuli are represented in the brain by comparing the similarity between dynamic computational model features and dynamic neural data.
 
-Here I provide neural MEG data from a test subject measured in June 2024. In this experiment, the participant watched videos of a dot moving across the screen.
+In 'data' I provide neural MEG data from a test subject measured in June 2024. In this experiment, the participant watched videos of a dot moving across the screen.
 I also provide data from two computational model features (position, direction) and the neural data.  
 
 
