@@ -21,7 +21,7 @@ comptational models of the position and direction of the dot in the videos.
 import scipy.io as sio
 import numpy as np
 import dRSA_coreFunction
-#from matplotlib.colors import LinearSegmentedColormap
+#from matplotlib.colors import LinearSegmentedColormap  # LP: clean up leftovers!
 import matplotlib.pyplot as plt
 
 
@@ -33,12 +33,13 @@ Y = np.array(Y2)
 
 
 # Load the model data
-Modelfu = sio.loadmat('example_model.mat')
+Modelfu = sio.loadmat('example_model.mat')  # LP:  as much as possible, lowercase variables :)
 models = Modelfu['tosave']
 Data_Model = [models[0, 0], models[0, 1]]  
 
 # Specify the parameters
-# Load YAML config file ?? 
+# Load YAML config file ??   # LP: this in general is a great option, as you can then make a folder
+# with all the results, plots and the config file with which you can reproduce the results
 # Easier: Dictionary
 
 opt = dict()
@@ -85,6 +86,7 @@ meandRSA = dRSA_coreFunction.dRSA_core(Y, model_data, opt)
 
  
 ## plotting
+# LP: try to stick to the canonical indentations! (2 or 4 spaces)
 plt.figure()  # Create a new figure for each model
 for iModel in range(len(model_data)):
          plt.subplot(len(model_data), 1, iModel + 1)
