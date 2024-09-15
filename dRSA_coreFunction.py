@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 """
+LP: this is documentation about the function and should be kept in the function itself to be accessible
+# when you import the function!
+
  Core Function of  dynamic Representation Analysis
  
  
@@ -23,6 +26,7 @@ Output:
  
 """
 
+from tkinter import N
 import numpy as np
 import pandas as pd
 import scipy.spatial.distance as spd
@@ -58,6 +62,12 @@ def dRSA_core(Y, model_data, opt):
         # We have features x time points
         
         print('concatenate events in models')
+        # LP: This loop could probably be avoided with something like:
+        # n = len(model_data)
+        # model_data = model_data.transpose(0, 3, 1, 2).reshape(n, nTPevents* nEvents, nModelFeatures).transpose(0, 2, 1)                  
+        # less readable, maybe, but avoiding loops is usually good!
+
+
         for i in range(len(model_data)):                       
             model_data_temp = model_data[i].copy()
             #print(f"Original shape of model_data[{i}]:", model_data_temp.shape)
@@ -131,9 +141,11 @@ def dRSA_core(Y, model_data, opt):
      # Plotting my Subsamples
     
     #### NOT WORKING AS INTENDED BUT ALSO NOT IMPORTANT
-    # The second Subplot was supposed to show my masks
+    # The second Subplot was supposed to show my masks  # LP: I know this is the matlab friendly way but plt.subplots() is more solid!
     # But although I have "1" in the beginning it does not show??
-    
+
+    # LP: I would suggest not to plot in the middle of a data analysis function if not strictly necessary.
+    # An option is a specific plotting function for sanity checs
     
     plt.figure(figsize=(10, 15))
 
@@ -271,10 +283,14 @@ def dRSA_core(Y, model_data, opt):
                      # Peearson Correlation for the columns
                      corr, x = pearsonr(modelRDM_temp , neuralRDM_temp)  # we correlate the 105 features
                      # corr should be our correlation, no idea what x is but we need it for this to work
+                     # LP: x is the p-value of the correlation! when a function returns more than one value,
+                     # either you assign all of them or you get a tuple. but 
+                     # a corr variable of tuple type would not have worked below, maybe that ws your issue!
                      dRSA[i, row_m, row_n, iModel] = corr
                      
                      ## this takes ages but no idea how else I could do it.
                      # Matlab has a function (pdist) and does it in like in 1s
+                     # LP: there is scipy.pdist! pretty sure it should do the same.
 
                  
        

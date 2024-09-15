@@ -24,6 +24,8 @@ We repeat this process across iIter Iterations and then average in the end
 import numpy as np
 import pandas as pd
 
+# LP: as you are defining a simgle function here, this code could have been put in the same script as the core function!
+# Not MATLAB, we don't need a script for each function!
 
 def dRSA_createSubsamples(maskSubsampling, opt):
     """ The Mask is a vector telling us from where we are allowed to 
@@ -47,6 +49,10 @@ def dRSA_createSubsamples(maskSubsampling, opt):
     #maskSubsampling = maskSubsampling.astype(bool)
     # Initialize the empty arrays
 
+    
+    # LP: I would not define a dictionary of parameters consumed by the function, as this
+    # masks what the parameters that have to be passed are! Just pass each one of them as parameter
+    # to the function, with defaults if needed.
     
     SSIndices = np.empty((opt['nSubSamples'], opt['SubSampleDur'], opt['nIter']), dtype='object')
     SSIndicesPlot = np.zeros((opt['nIter'], len(maskSubsampling)), dtype=int)
